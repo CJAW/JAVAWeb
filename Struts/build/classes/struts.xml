@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+
+
+ <!-- 配置struts标签 -->
+    
+    <!-- bean标签 创建一个javabean的实例 -->
+    
+    <!-- constant标签 用于struts2的行为标签 -->
+    
+    <!-- page标签 用于用于区分不同的请求文件的内容 -->
+    
+    <!-- include标签 用于引入不同的xml文件 -->
+
+
+	<constant name="struts.convention.result.path" value="/WEB-INF" />
+	<constant name="struts.convention.package.locators.basePackage"
+		value="org.apache.struts2.showcase" />
+	<constant name="struts.custom.i18n.resources" value="globalMessages" />
+	<constant name="struts.serve.static" value="true" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<!-- 配置web的默认编码 -->
+	<constant name="struts.i18n.reload" value="false" />
+
+	<!-- 配置struts的拦截请求的后缀默认为action，可以配置多个后缀，以逗号隔开 -->
+	<constant name="struts.action.extension" value="action,," />
+
+	<!-- 设置游览器是否缓存静态的内容，开发阶段为false，部署为true -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+
+	<!-- 当配置文件修改后系统是否自动加载修改后的配置文件 -->
+	<constant name="struts.configuration.xml.reload" value="false" />
+
+	<!-- 打印出详细的错误信息 -->
+	<constant name="struts.devMode" value="true" />
+
+	<!-- 默认视图主题 -->
+	<constant name="struts.ui.theme" value="simple" />
+
+
+	<!--name为包名，用于其他的包调用或继承，唯一；extends继承，默认继承struts－default，会继承该文件的配置信息及拦截器； 
+		namespace为空间命名，可以不配值，加入后，地址的访问url为／namespace/action name -->
+	<package name="test" extends="struts-default" namespace="/new">
+
+
+		<!-- action标签为处理请求的信息，请求页面的action要与name匹配，一个name对应一个action ,url为／namespace/action 
+			name.后缀 -->
+		<action name="login" class="com.user.struts2.Demo" >
+
+			<!-- result标签为处理结果，可以实现跳转，根据name与java的返回值来进行匹配 -->
+			<result name="success">/StrutsJsp/success.jsp</result>
+			<result name="error">/StrutsJsp/error.jsp</result>
+			
+		</action>
+
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+

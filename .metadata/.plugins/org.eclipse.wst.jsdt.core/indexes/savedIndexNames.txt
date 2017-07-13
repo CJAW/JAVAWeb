@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/Users/user/Desktop/javaWeb/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1865506607.index
+1302464960.index
+2930004291.index
+1516711537.index
+864220293.index
+602675058.index

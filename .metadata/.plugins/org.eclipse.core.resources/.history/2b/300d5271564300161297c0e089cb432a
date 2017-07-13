@@ -1,0 +1,42 @@
+package util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBHelper {
+ private static final String dirver="com.mysql.jdbc.Driver";
+ private static final String url = "jdbc:mysql://localhost/ClassDesign?autoReconnect=true&useUnicode=true&characterEncoding=gbk&mysqlEncoding=utf8";
+ private static final  String user = "root";
+ private static final String password = "si071251";
+ private static Connection conn=null;
+ static {
+	 try{
+	 Class.forName(dirver);
+	 }catch(Exception e){
+		 e.printStackTrace();
+	 }
+	 
+ }
+ public static Connection getConnection()throws Exception{
+	if(conn==null){
+		conn=DriverManager.getConnection(url, user, password);
+		return conn;
+	} 
+	return conn;
+ }
+ public static void main(String [] arge){
+	 try {
+		Connection connection = DBHelper.getConnection();
+		if(connection!=null){
+			System.out.println("success");
+		}else{
+			
+			System.out.println("false");
+		}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	 
+ }
+}

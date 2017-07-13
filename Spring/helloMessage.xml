@@ -1,0 +1,9 @@
+<Beans>
+
+<bean  id="china" class="com.user.spring.China"></bean>
+<bean  id="englisg" class="com.user.spring.English"></bean>
+<bean  id="person" class="com.user.spring.Person">
+<propetry name="iMessage" ref="china"></propetry> <!-- 将person类中的iMessage赋值,将China类的方法赋予iMessage -->
+</bean>
+
+</Beans>
